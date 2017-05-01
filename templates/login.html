@@ -1,0 +1,33 @@
+{% extends "layoutMyProgect.html" %}
+
+{% block title %}
+Вхід
+{% endblock %}
+
+{% block body %}
+{% if mistake %}
+    <p> {{ mistake }} </p>
+    <a href='/l'>Спробувати увійти ще раз</a>
+{% else %}
+<div id="loginpage">
+<div class="row">
+<div class="col-md-4"></div> 
+    <div class="col-md-4" align="centre">
+    <form action='/l' method="post">
+        <h1 class="text-primary">Вхід в систему:</h1><br>
+            <p>Будь ласка, введіть ім'я:</p>
+            <input name="username" type="text" /><br>      
+            <p>адресу електронної пошти:</p>
+            <input name="email" type="text"/><br>
+            <p>пароль:</p>
+            <input name="password" type="text"/><br>
+        <input type="submit" class="btn btn-lg btn-info navbar-btn" value="Вхід">   
+    </form>
+    <h4><a href='/newuser'>Створити обліковий запис</a><br>
+    <a href='/'>Повернутися на головну сторінку</a></h4>
+       </div>
+<div class="col-md-4"></div>
+</div>
+{% endif %}
+</div>
+{% endblock %}

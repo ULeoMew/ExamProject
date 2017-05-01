@@ -1,0 +1,61 @@
+{% extends "layoutMyProgect.html" %}
+
+{% block title %}
+{% if current_user.is_authenticated %}
+{{ current_user }} в клубі
+{% else %} 
+Клуб
+{% endif %}
+{% endblock %}
+
+{% block body %}
+{% if note %}
+{{ note }} <a href="/club"> Повернутись до коментування.</a>
+{% else %}
+    <div class="menu">
+    <a class="btn btn-success" href="/">Головна</a>
+    <a class="btn btn-success" href="/about">Про наш сайт</a>
+    <a class="btn btn-success" href="/whatfirst">З чого почати</a>
+    <a class="btn btn-success" href="/komunikacii">Комунікації</a>
+    <a class="btn btn-success" href="/interior">Інтер'єр</a>
+    <a class="btn btn-success" href="/catalog">Довідник</a>
+    <a class="btn btn-warning" href="/club">Клуб</a>
+    {% if current_user.is_authenticated %}
+    <a class="btn btn-info pull-right" href="/logout">Вихід</a>
+    {% else %} 
+    <a class="btn btn-info pull-right" href="/l">Вхід</a>
+    {% endif %}
+    </div><br>
+    {% if current_user.is_authenticated %}
+    <h1> Клуб </h1>
+    <div>
+    <p> На цій сторінці авторизовані читачі можуть задавати питання, ділитися своїм досвідом. Допоможемо одне одному втілювати наші мрії!
+    </div>
+    {% else %}
+    <h1> Клуб </h1>
+    <div>
+    <p> На цій сторінці <a href="/l"> <u>авторизовані читачі</u> </a> можуть задавати питання, ділитися своїм досвідом. Допоможемо одне одному втілювати наші мрії!
+    </div>
+    {% endif %}
+    {% if current_user.is_authenticated %}
+    <form action="{{ url_for('club') }}" method="post">
+          <label for="usr">Ім'я: </label>
+          <textarea class="form-control" rows="1" name="username">{{ current_user }}</textarea>
+          <label for="comment">Коментар:</label>
+          <textarea class="form-control" rows="15" id="comment" name="text"></textarea>
+        <input type="submit" class="btn btn-primary" value="Опублікувати">
+    </form>
+    {% endif %}
+    <div class="media">
+    {% for entry in entries %}
+    <div class="media-left">
+        <img src="static/clubcoment.png" class="media-object" style="width:60px">
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{ entry.username }}</h4>
+        <p> {{ entry.text }}</p>
+      </div><br>
+    {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}

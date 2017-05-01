@@ -1,0 +1,32 @@
+{% extends "layoutMyProgect.html" %}
+
+{% block title %}
+Реєстрація
+{% endblock %}
+
+{% block body %}
+{% if note %}
+    <p>{{ note }}</p>
+    <p>Перевірте дані і <a href='/newuser'>спробуйте ще раз.</a></p>
+{% else %}
+<div id="newUs">
+<div class="row">
+<div class="col-md-4"></div> 
+    <div class="col-md-4" align="centre">
+    <h1 class="text-primary">Створити обліковий запис</h1><br>
+    <form action="{{ url_for('add_user') }}" method="post">
+        <p>Введіть ім'я:<br>
+            <input name="username" type="text" /><br>      
+        <p>адресу електронної пошти:<br>
+            <input name="email" type="text"/><br>
+        <p>пароль:<br>
+            <input name="password" type="text"/><br>
+        <input type="submit" class="btn btn-lg btn-info navbar-btn" value="Зареєструватися">   
+    </form>
+    <h4><a href='/'>Повернутися на головну сторінку</a></h4>
+       </div>
+<div class="col-md-4"></div>
+</div>
+{% endif %}
+</div>
+{% endblock %}

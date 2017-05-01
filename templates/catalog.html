@@ -1,0 +1,56 @@
+{% extends "layoutMyProgect.html" %}
+
+{% block title %}
+Довідник
+{% endblock %}
+
+{% block body %}
+<div class="menu">
+<a class="btn btn-success" href="/">Головна</a>
+<a class="btn btn-success" href="/about">Про наш сайт</a>
+<a class="btn btn-success" href="/whatfirst">З чого почати</a> 
+<a class="btn btn-success" href="/komunikacii">Комунікації</a> 
+<a class="btn btn-success" href="/interior">Інтер'єр</a>
+<a class="btn btn-warning" href="/catalog">Довідник</a> 
+<a class="btn btn-success" href="/club">Клуб</a>
+{% if current_user.is_authenticated %}
+<a class="btn btn-info pull-right" href="/logout">Вихід</a>
+{% else %} 
+<a class="btn btn-info pull-right" href="/l">Вхід</a>
+{% endif %}
+</div><br>
+<h1> Довідник </h1>
+<div>
+<p> Тут зібрані посилання на ті сайти, які, на нашу думку, можуть стати вам в нагоді.   
+</div>
+<div>
+<table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Сайт</th>
+        <th>Спеціалізація</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="http://dbn.at.ua/load/normativy/dbn/1-1-0-1018" target="_blank">http://dbn.at.ua/load/normativy/dbn/1-1-0-1018</a></td>
+        <td>Державні будівельні норми України</td>
+      </tr>
+      <tr>
+        <td><a href="http://kitchenguide.su/garnitury/stoleshnicy-dlya-kuxni.html" target="_blank">http://kitchenguide.su/garnitury/stoleshnicy-dlya-kuxni.html</a></td>
+        <td>Порівняння матеріалів для кухоних поверхонь</td>
+      </tr>
+      <tr>
+        <td><a href="http://viknova.com.ua/calculator/" target="_blank">http://viknova.com.ua/calculator/</a><br>
+        <a href="https://lux-okna.com/ua/kalkulyator" target="_blank">https://lux-okna.com/ua/kalkulyator</a><br>
+        <a href="http://windzor.com.ua/calculate/" target="_blank">http://windzor.com.ua/calculate/</a></td>
+        <td><br>Калькулятори розрахунку вартості від різних виробників</td>
+      </tr>
+      <tr>
+        <td><a href="http://www.remontbp.com/pogovorim-o-cvete-pravila-sochetanija-i-vozdestvija/" target="_blank">http://www.remontbp.com/pogovorim-o-cvete-pravila-sochetanija-i-vozdestvija/</a></td>
+        <td>Таблиці поєднання кольорів</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}

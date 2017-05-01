@@ -1,0 +1,11 @@
+{% extends "layoutMyProgect.html" %}
+
+{% block title %}
+Вихід
+{% endblock %}
+
+{% block body %}
+<form action="{{ url_for('logout') }}" method="post" name="logout" enctype="text/plain">
+    <input type="submit" class="btn btn-lg btn-block btn-info navbar-btn" value="Вихід">
+ </form>
+{% endblock %} 

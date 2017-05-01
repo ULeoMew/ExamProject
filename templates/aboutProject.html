@@ -1,0 +1,39 @@
+{% extends "layoutMyProgect.html" %}
+
+{% block title %}
+Про нас
+{% endblock %}
+
+{% block body %}
+<div class="menu">
+<a class="btn btn-success" href="/">Головна</a>
+<a class="btn btn-warning" href="/about">Про наш сайт</a>
+<a class="btn btn-success" href="/whatfirst">З чого почати</a> 
+<a class="btn btn-success" href="/komunikacii">Комунікації</a> 
+<a class="btn btn-success" href="/interior">Інтер'єр</a>
+<a class="btn btn-success" href="/catalog">Довідник</a> 
+<a class="btn btn-success" href="/club">Клуб</a>
+{% if current_user.is_authenticated %}
+<a class="btn btn-info pull-right" href="/logout">Вихід</a>
+{% else %} 
+<a class="btn btn-info pull-right" href="/l">Вхід</a>
+{% endif %}
+</div><br>
+<h2> Затишна оселя </h2>
+<div>
+<p> В кожного своє уявлення про ідеальну оселю. Для когось вона виглядає так <br>
+<img alt="DreamHouse1" src="{{ url_for('static', filename='home1.jpg') }}" hspace=10px vspace=10px class = "picture"/><br>
+а хтось вважатиме ідеальним цей варіант <br>
+<img alt="DreamHouse2" src="{{ url_for('static', filename='home2.jpg') }}" hspace=10px vspace=10px class = "picture"/><br>
+або цей <br>
+<img alt="DreamHouse3" src="{{ url_for('static', filename='home3.jpg') }}" hspace=10px vspace=10px class = "picture"/><br>
+Але окрім гарного вигляду ззовні, наявності або відсутності басейну/альтанки/мангалу/продовжіть своє, багато хто не має чіткого уявлення про те, що має бути всередині. І тут мова не стільки про інтер'єр як такий, а про функціональність простору, його ергономічність, можливість модернізації з мінімальними зусиллями.<br>
+<img alt="WhatInside?" src="{{ url_for('static', filename='home4.jpg') }}" hspace=10px vspace=10pxclass = "picture"/><br>
+</div>
+<div>
+<p> На цьому сайті зібрані невеличкі підказки, приклади з власного досвіду, отримані під час будівництва свого будинку мрії.
+Професійні сайти для дизайнерів, будівельників та інших професіоналів даної галузі добре розписують вузькі спеціалізовані питання.
+Але нажаль вони дадуть відповідь лише на конкретні питання, тобто ви вже маєте чітко розуміти що вас цікавить. 
+Якщо ж ви тільки замислились над власним будівництвом і хочете для початку конкретизувати ідею, визначитись з початковими критеріями, наші підказки стануть вам у нагоді.  
+</div>
+{% endblock %}

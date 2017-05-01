@@ -1,0 +1,37 @@
+{% extends "layoutMyProgect.html" %}
+
+{% block title %}
+{% if current_user.is_authenticated %}
+{{ current_user }}, вітаємо!
+{% else %} 
+Головна
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<body id="index"> 
+{% if current_user.is_authenticated %}
+<img id="main" alt="3ed440172437dd8b4851657e8ac43be2.jpg" src="/static/regMenu.jpg" usemap="#myMap" width="500" height="583"/>
+<map name="myMap" id="myMap">
+        <area shape="poly" coords="66,30,50,78,454,80,438,30" alt="aboutProject" class="{fill:true,fillColor:'00ff00',fillOpacity:0.4,stroke:true,strokeColor:'330066',strokeOpacity:0.8,strokeWidth:1}" href="\about" target="_self" title="Про наш сайт"/>
+        <area shape="poly" coords="58,177,57,242,178,241,178,176" alt="whatfirst" class="{fill:true,fillColor:'00ff00',fillOpacity:0.4,stroke:true,strokeColor:'330066',strokeOpacity:0.8,strokeWidth:1}" href="\whatfirst" target="_self" title="З чого почати"/>
+        <area shape="poly" coords="325,177,444,175,445,240,324,239" class="{fill:true,fillColor:'00ff00',fillOpacity:0.4,stroke:true,strokeColor:'330066',strokeOpacity:0.8,strokeWidth:1}" href="\komunikacii" target="_self" title="Комунікації"/>
+        <area shape="poly" coords="57,305,176,306,176,372,56,372" class="{fill:true,fillColor:'00ff00',fillOpacity:0.4,stroke:true,strokeColor:'330066',strokeOpacity:0.8,strokeWidth:1}" href="\interior" target="_self" title="Інтер'єр"/>
+        <area shape="poly" coords="207,299,251,280,293,300,283,312,282,404,220,407,220,314" alt="Login" class="{fill:true,fillColor:'00ff00',fillOpacity:0.4,stroke:true,strokeColor:'330066',strokeOpacity:0.8,strokeWidth:1}" href="\logout" target="_self" title="Logout"/>
+        <area shape="poly" coords="328,304,448,304,448,373,327,372" class="{fill:true,fillColor:'00ff00',fillOpacity:0.4,stroke:true,strokeColor:'330066',strokeOpacity:0.8,strokeWidth:1}" href="\catalog" target="_self" title="Довідник" />
+        <area shape="poly" coords="229,444,234,434,241,429,248,427,254,428,258,428,262,429,266,432,270,436,273,439,274,444,274,516,230,517" class="{fill:true,fillColor:'00ff00',fillOpacity:0.4,stroke:true,strokeColor:'330066',strokeOpacity:0.8,strokeWidth:1}" href="\club" target="_self" title="Клуб" />
+    </map>
+{% else %}
+<img id="main" alt="3ed440172437dd8b4851657e8ac43be2.jpg" src="/static/Menu.jpg" usemap="#myMap" width="500" height="583"/>
+<map name="myMap" id="myMap">
+        <area shape="poly" coords="66,30,50,78,454,80,438,30" alt="aboutProject" class="{fill:true,fillColor:'00ff00',fillOpacity:0.4,stroke:true,strokeColor:'330066',strokeOpacity:0.8,strokeWidth:1}" href="\about" target="_self" title="Про наш сайт"/>
+        <area shape="poly" coords="58,177,57,242,178,241,178,176" alt="whatfirst" class="{fill:true,fillColor:'00ff00',fillOpacity:0.4,stroke:true,strokeColor:'330066',strokeOpacity:0.8,strokeWidth:1}" href="\whatfirst" target="_self" title="З чого почати"/>
+        <area shape="poly" coords="325,177,444,175,445,240,324,239" class="{fill:true,fillColor:'00ff00',fillOpacity:0.4,stroke:true,strokeColor:'330066',strokeOpacity:0.8,strokeWidth:1}" href="\komunikacii" target="_self" title="Комунікації"/>
+        <area shape="poly" coords="57,305,176,306,176,372,56,372" class="{fill:true,fillColor:'00ff00',fillOpacity:0.4,stroke:true,strokeColor:'330066',strokeOpacity:0.8,strokeWidth:1}" href="\interior" target="_self" title="Інтер'єр"/>
+        <area shape="poly" coords="207,299,251,280,293,300,283,312,282,404,220,407,220,314" alt="Login" class="{fill:true,fillColor:'00ff00',fillOpacity:0.4,stroke:true,strokeColor:'330066',strokeOpacity:0.8,strokeWidth:1}" href="\l" target="_self" title="Login"/>
+        <area shape="poly" coords="328,304,448,304,448,373,327,372" class="{fill:true,fillColor:'00ff00',fillOpacity:0.4,stroke:true,strokeColor:'330066',strokeOpacity:0.8,strokeWidth:1}" href="\catalog" target="_self" title="Довідник" />
+        <area shape="poly" coords="229,444,234,434,241,429,248,427,254,428,258,428,262,429,266,432,270,436,273,439,274,444,274,516,230,517" class="{fill:true,fillColor:'00ff00',fillOpacity:0.4,stroke:true,strokeColor:'330066',strokeOpacity:0.8,strokeWidth:1}" href="\club" target="_self" title="Клуб" />
+    </map>
+{% endif %}  
+</body>
+{% endblock %}

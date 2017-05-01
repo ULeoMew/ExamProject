@@ -1,0 +1,41 @@
+#layout {
+    margin: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+img.picture {
+	width: 30%;
+}
+
+
+#main {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+
+div.empty {
+    position: fixed; 
+    width: 100%;
+    height: 20px;
+    background-color: white;        
+}
+
+#loginpage, #newUs {
+    background-image: url("inter1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;                     
+        }
+
+
+
+div.menu {
+        position: fixed;
+        background-color: white;
+        width: 98%;
+        height: 40px;
+        }
